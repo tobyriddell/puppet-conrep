@@ -1,0 +1,33 @@
+#!/usr/bin/perl
+
+use strict;
+
+use Getopt::Long;
+
+my $opt_s = 0;
+my $opt_l = 0;
+my $opt_f = '';
+
+GetOptions("save" => \$opt_s, 
+	       "file=s" => \$opt_f,
+	       "load" => \$opt_l);
+
+if ( $opt_s ) {
+	open(OUTPUT, "> $opt_f") || die "Could not open $opt_f for writing: $!";
+	print OUTPUT <<EOF
+<Conrep version="3.50" originating_platform="ProLiant DL380p Gen8" originating_family="P70" originating_romdate="03/01/2013" originating_processor_manufacturer="Intel">
+  <Section name="IMD_ServerName" helptext="Asset tag string as entered in RBSU">
+    <Line0>
+      </Line0>
+  </Section>
+  <Section name="Intel_Processor_Turbo_Mode" helptext="Allows Intel processors to transition to a higher frequency than its rated speed if the processor has available headroom and is within temperature specification.">Enabled</Section>
+  <Section name="HP_Power_Profile" helptext="Selects the level of power versus performance for the system.">Balanced</Section>
+  <Section name="Intel_QPI_Link_Frequency" helptext="This option allows the user to set the QPI Link frequency to a lower speed. Running at a lower frequency may reduce power consumption but may also impact system performance.">Auto</Section>
+  <Section name="Thermal_Configuration" helptext="Selects the fan cooling solution for the system(not for ML350 G6).">Optimal_Cooling</Section>
+  <Section name="Memory_Speed_with_2_DIMMs_per_Channel" helptext="Allows system to run DIMMs at 1333 MHz when up to 2 DIMMs are installed on a memory channel. Function validated with HP DIMMs. HP recommends this setting remain at the default of 1066 MHz if utilizing non-HP DIMMs.">1333MHz_Maximum</Section>
+  <Section name="Intel_Turbo_Boost_Optimization_Gen8" helptext="The QPI link between 2 processors has been tuned to provide the best performance for all known applications.">Balanced</Section>
+</Conrep>
+EOF
+}
+
+# vim:sw=2:ts=2:et:

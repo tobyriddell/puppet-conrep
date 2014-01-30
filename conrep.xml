@@ -1,0 +1,2598 @@
+<Conrep>
+	<global>
+		<helptext><![CDATA[
+
+		This is the input file for CONREP describing the 
+		configurable settings for the ProLiant servers listed below.
+		Other models require platform specific configuration files that are available
+		on hp.com.
+
+		]]></helptext>
+	<fileversion>4.35</fileversion>
+	<minimumconrepversion>3.40</minimumconrepversion>
+	<platforms>
+		<platform>ProLiant DL120 G7</platform>
+		<platform>ProLiant ML110 G7</platform>
+		<platform>ProLiant DL3</platform>
+		<platform>ProLiant ML3</platform>
+		<platform>ProLiant DL5</platform>
+		<platform>ProLiant ML5</platform>
+		<platform>ProLiant DL7</platform>
+		<platform>ProLiant DL9</platform>
+		<platform>ProLiant BL</platform>
+		<platform>ProLiant XW</platform>
+		<platform>ProLiant WS</platform>
+		<platform>ProLiant SE</platform>
+		<platform>ProLiant SL4</platform>
+		<platform>ProLiant SL3</platform>
+		<platform>ProLiant SL2</platform>
+		<platform>ProLiant DL160 Gen8</platform>
+		<platform>ProLiant SL160 Gen8</platform>
+		<platform>ProLiant SL140</platform>
+		<platform>ProLiant WS460c Gen8 WS Blade</platform>
+		<platform>ProLiant MicroServer Gen8</platform>
+	</platforms>
+	<onmismatch>exception</onmismatch>
+	</global>
+
+	<Section name="OS">
+		<helptext><![CDATA[Installed OS]]></helptext>
+		<ev>CQHOS</ev>
+		<length>2</length>
+	</Section>
+	<Section name="IMD_ServerName">
+	<helptext><![CDATA[LCD Display name for this server]]></helptext>
+		<ev>CQHLS1</ev>
+		<length>30</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_ServerAssetTag">
+		<helptext><![CDATA[Asset tag string as entered in RBSU]]></helptext>
+		<ev>CQHLS2</ev>
+		<length>34</length>
+		<record_size>17</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>17</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_ServerPrimaryOS">
+		<helptext><![CDATA[Free text to describe OS installation]]></helptext>
+		<ev>CQHLS3</ev>
+		<length>45</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_ServerMiscInfo">
+		<helptext><![CDATA[Free text strings for information on this server]]></helptext>
+		<ev>CQHLS4</ev>
+		<length>30</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_AdminName">
+		<helptext><![CDATA[Free text to identify the server administrator]]></helptext>
+		<ev>CQHLA1</ev>
+		<length>30</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_AdminPhone">
+		<helptext><![CDATA[Free text describing the administrator phone number]]></helptext>
+		<ev>CQHLA2</ev>
+		<length>30</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_AdminPager">
+		<helptext><![CDATA[Free text to contain the administrator pager info]]></helptext>
+		<ev>CQHLA3</ev>
+		<length>30</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_AdminMisc">
+		<helptext><![CDATA[Free text field]]></helptext>
+		<ev>CQHLA4</ev>
+		<length>30</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_ServiceName">
+		<helptext><![CDATA[Free text describing the service name for this server]]></helptext>
+		<ev>CQHLC1</ev>
+		<length>30</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_ServicePhone">
+		<helptext><![CDATA[Free text for server phone information]]></helptext>
+		<ev>CQHLC2</ev>
+		<length>30</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_ServicePager">
+		<helptext><![CDATA[Free text describing the service pager number]]></helptext>
+		<ev>CQHLC3</ev>
+		<length>30</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_ServiceMisc">
+		<helptext><![CDATA[Free text with any additional service information]]></helptext>      
+		<ev>CQHLC4</ev>
+		<length>30</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_UserDefinedName">
+		<helptext><![CDATA[User defined information for the display LCD]]></helptext>
+		<ev>CQHLCD</ev>
+		<length>51</length>
+		<record_size>17</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>17</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_UserDefinedMenu">
+		<helptext><![CDATA[User defined information for the display LCD]]></helptext>
+		<ev>CQHLD1</ev>
+		<length>15</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IMD_UserDefinedSubMenu">
+		<helptext><![CDATA[User defined information for the display LCD]]></helptext>
+		<ev>CQHLD2</ev>
+		<length>60</length>
+		<record_size>15</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>15</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IPL_Order">
+		<ev>CQHIPL</ev>
+		<helptext><![CDATA[Current Initial ProgramLoad device boot order.]]></helptext>		
+		<length>16</length>
+		<record_size>1</record_size>
+		<Fields>
+			<Field>
+				<Field_name>Index</Field_name>
+				<Field_size>1</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="IPL_Order_Size">
+		<ev>CQHNIPL</ev>
+		<helptext><![CDATA[Current Initial ProgramLoad device boot order size.]]></helptext>		
+		<length>1</length>
+		<record_size>1</record_size>
+		<Fields>
+			<Field>
+				<Field_name>Size</Field_name>
+				<Field_size>1</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="PCI_Devices">
+		<helptext><![CDATA[Lists of PCI devices and their interrupts - not displayed if default values are set.]]></helptext>		
+		<ev>CQSPCI</ev>
+		<length>80</length>
+		<record_size>8</record_size>
+		<empty_delete>1</empty_delete>
+		<Fields>
+			<Field>
+				<Field_name>Index</Field_name>
+				<Field_size>1</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+			<Field>
+				<Field_name>INT</Field_name>
+				<Field_size>1</Field_size>
+				<Field_start>1</Field_start>
+			</Field>
+			<Field>
+				<Field_name>IRQ</Field_name>
+				<Field_size>1</Field_size>
+				<Field_start>2</Field_start>
+			</Field>
+			<Field>
+				<Field_name>Reserved</Field_name>
+				<Field_size>1</Field_size>
+				<Field_start>3</Field_start>
+			</Field>
+			<Field>
+				<Field_name>Id</Field_name>
+				<Field_size>4</Field_size>
+				<Field_start>4</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="Controller_Order">
+		<helptext><![CDATA[Lists the current boot controller ordering.]]></helptext>		
+		<ev>CQHORD</ev>
+		<length>64</length>
+		<record_size>8</record_size>
+		<Fields>
+			<Field>
+				<Field_name>Id</Field_name>
+				<Field_size>4</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+			<Field>
+				<Field_name>Slot</Field_name>
+				<Field_size>1</Field_size>
+				<Field_start>4</Field_start>
+			</Field>	
+			<Field>
+				<Field_name>BusDev</Field_name>
+				<Field_size>2</Field_size>
+				<Field_start>5</Field_start>
+			</Field>
+			<Field>
+				<Field_name>Rest</Field_name>
+				<Field_size>1</Field_size>
+				<Field_start>7</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="Language">
+		<helptext><![CDATA[Defines current language identifier]]></helptext>		
+		<ev>CQHLN</ev>
+		<length>6</length>
+		<format>text</format>
+	</Section>
+	<Section name="System_WOL">
+		<helptext><![CDATA[System Wake On Lan Capabilities.]]></helptext>		
+		<ev>CQSBKT</ev>
+		<length>7</length>
+		<value id="0">Undefined</value>
+		<value id="1">Enabled</value>
+		<value id="2">Disabled</value>
+		<value id="3">Reserved</value>
+		<mask>0x03</mask>
+		<byte>6</byte>
+	</Section>
+	<Section name="System_APIC">
+		<helptext><![CDATA[System APIC Settings(MPS Table Mode).]]></helptext>		
+		<ev>CQSBKT</ev>
+		<length>2</length>
+		<value id="0">Auto Set</value>
+		<value id="4">Full Table Mapped</value>
+		<value id="8">Full Table</value>
+		<value id="12">Disabled</value>
+		<mask>0x0C</mask>
+		<byte>1</byte>
+	</Section>
+	<Section name="System_Mouse">
+		<helptext><![CDATA[Enable or Disable the onboard mouse port.]]></helptext>		
+		<ev>CQSBKT</ev>
+		<length>2</length>
+		<value id="0x40">Enabled</value>
+		<value id="0xC0">Disabled</value>
+		<mask>0xC0</mask>
+		<byte>1</byte>
+	</Section>
+      <Section name="System_CPU_Serial_Number">
+		<helptext><![CDATA[Enables or disabled CPU serial numbers on systems that support it.]]></helptext>
+	      	<ev>CQSBKT</ev>
+		<length>2</length>
+                <value id="1">Enabled</value>
+                <value id="2">Disabled</value>
+                <mask>0x03</mask>
+		<byte>1</byte>
+	</Section>
+	<Section name="System_COMA">
+		<helptext><![CDATA[Settings for UART 1 on systems that support it.]]></helptext>		
+		<ev>CQSBKT</ev>
+		<length>3</length>
+		<value id="0">Undefined</value>
+		<value id="1">COM1</value>
+		<value id="2">COM2</value>
+		<value id="3">COM3</value>
+		<value id="4">COM4</value>
+		<value id="7">Disabled</value>
+		<mask>0x07</mask>
+		<byte>2</byte>
+	</Section>
+	<Section name="System_COMA_IRQ">
+		<helptext><![CDATA[Settings for UART 1 on systems that support it.]]></helptext>		
+		<ev>CQSBKT</ev>
+		<length>3</length>
+		<value id="0">Undefined</value>
+		<value id="0x10">IRQ1</value>
+		<value id="0x20">IRQ2</value>
+		<value id="0x30">IRQ3</value>
+		<value id="0x40">IRQ4</value>
+		<value id="0x50">IRQ5</value>
+		<value id="0x60">IRQ6</value>
+		<value id="0x70">IRQ7</value>
+		<value id="0x80">IRQ8</value>
+		<value id="0x90">IRQ9</value>
+		<value id="0xA0">IRQ10</value>
+		<value id="0xB0">IRQ11</value>
+		<value id="0xC0">IRQ12</value>
+		<value id="0xD0">IRQ13</value>
+		<value id="0xE0">IRQ14</value>
+		<value id="0xF0">IRQ15</value>
+		<mask>0xF0</mask>
+		<byte>2</byte>
+	</Section>
+	<Section name="System_COMB">
+		<helptext><![CDATA[Settings for UART 2 on systems that support it.]]></helptext>		
+		<ev>CQSBKT</ev>
+		<length>4</length>
+		<value id="0">Undefined</value>
+		<value id="1">COM1</value>
+		<value id="2">COM2</value>
+		<value id="3">COM3</value>
+		<value id="4">COM4</value>
+		<value id="7">Disabled</value>
+		<mask>0x07</mask>
+		<byte>3</byte>
+	</Section>
+	<Section name="System_COMB_IRQ">
+		<helptext><![CDATA[Settings for UART 2 on systems that support it.]]></helptext>		
+		<ev>CQSBKT</ev>
+		<length>4</length>
+		<value id="0">Undefined</value>
+		<value id="0x10">IRQ1</value>
+		<value id="0x20">IRQ2</value>
+		<value id="0x30">IRQ3</value>
+		<value id="0x40">IRQ4</value>
+		<value id="0x50">IRQ5</value>
+		<value id="0x60">IRQ6</value>
+		<value id="0x70">IRQ7</value>
+		<value id="0x80">IRQ8</value>
+		<value id="0x90">IRQ9</value>
+		<value id="0xA0">IRQ10</value>
+		<value id="0xB0">IRQ11</value>
+		<value id="0xC0">IRQ12</value>
+		<value id="0xD0">IRQ13</value>
+		<value id="0xE0">IRQ14</value>
+		<value id="0xF0">IRQ15</value>
+		<mask>0xF0</mask>
+		<byte>3</byte>
+	</Section>
+	<Section name="System_Virtual_Serial_Port">
+		<helptext><![CDATA[Virtual Serial Port Settings for systems that support it.]]></helptext>			
+		<ev>CQSBKT</ev>
+		<length>11</length>
+		<value id="0">Undefined</value>
+		<value id="1">COM1</value>
+		<value id="2">COM2</value>
+		<value id="3">COM3</value>
+		<value id="4">COM4</value>
+		<value id="7">Disabled</value>
+		<mask>0x07</mask>
+		<byte>10</byte>
+	</Section>
+	<Section name="System_Virtual_Serial_Port_IRQ">
+		<helptext><![CDATA[Virtual Serial Port IRQ Settings for systems that support it.]]></helptext>			
+		<ev>CQSBKT</ev>
+		<length>11</length>
+		<value id="0">Undefined</value>
+		<value id="0x10">IRQ1</value>
+		<value id="0x20">IRQ2</value>
+		<value id="0x30">IRQ3</value>
+		<value id="0x40">IRQ4</value>
+		<value id="0x50">IRQ5</value>
+		<value id="0x60">IRQ6</value>
+		<value id="0x70">IRQ7</value>
+		<value id="0x80">IRQ8</value>
+		<value id="0x90">IRQ9</value>
+		<value id="0xA0">IRQ10</value>
+		<value id="0xB0">IRQ11</value>
+		<value id="0xC0">IRQ12</value>
+		<value id="0xD0">IRQ13</value>
+		<value id="0xE0">IRQ14</value>
+		<value id="0xF0">IRQ15</value>
+		<mask>0xF0</mask>
+		<byte>10</byte>
+	</Section>
+	<Section name="System_LPT">
+		<helptext><![CDATA[System parallel port settings for systems that support it.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>5</length>
+		<value id="0">Undefined</value>
+		<value id="1">LPT1</value>
+		<value id="2">LPT2</value>
+		<value id="3">LPT3</value>
+		<value id="7">Disabled</value>
+		<mask>0x07</mask>
+		<byte>4</byte>
+	</Section>
+	<Section name="System_LPT_IRQ">
+		<helptext><![CDATA[System parallel port settings for systems that support it.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>5</length>
+		<value id="0">Undefined</value>
+		<value id="0x10">IRQ1</value>
+		<value id="0x20">IRQ2</value>
+		<value id="0x30">IRQ3</value>
+		<value id="0x40">IRQ4</value>
+		<value id="0x50">IRQ5</value>
+		<value id="0x60">IRQ6</value>
+		<value id="0x70">IRQ7</value>
+		<value id="0x80">IRQ8</value>
+		<value id="0x90">IRQ9</value>
+		<value id="0xA0">IRQ10</value>
+		<value id="0xB0">IRQ11</value>
+		<value id="0xC0">IRQ12</value>
+		<value id="0xD0">IRQ13</value>
+		<value id="0xE0">IRQ14</value>
+		<value id="0xF0">IRQ15</value>
+		<mask>0xF0</mask>
+		<byte>4</byte>
+	</Section>
+	<Section name="System_LPT_Mode">
+		<helptext><![CDATA[System parallel port settings for systems that support it.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>10</length>
+		<value id="0">SPP</value>
+		<value id="1">ECP</value>
+		<value id="2">EPP</value>
+		<mask>0x03</mask>
+		<byte>9</byte>
+	</Section>
+	<Section name="System_USB_Control">
+		<helptext><![CDATA[Systemwide USB settings.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>12</length>
+		<value id="0">Enabled</value>
+		<value id="1">Disabled</value>
+		<value id="2">Legacy USB Disabled</value>
+		<value id="3">External Ports Disabled</value>
+		<mask>0x03</mask>
+		<byte>11</byte>
+	</Section>
+	<Section name="System_USB_EHCI_Controller">
+		<helptext><![CDATA[Enables or disabled EHCI mode(USB 2.0) of the system USB controller.]]></helptext>
+		<ev>CQSBKT</ev>
+		<length>12</length>
+		<value id="0">Enabled</value>
+		<value id="4">Disabled</value>
+		<mask>0x04</mask>
+		<byte>11</byte>
+	</Section>
+	<Section name="Diskette_Write_Control">
+		<helptext><![CDATA[Toggles write control of integrated floppy.]]></helptext>
+		<ev>CQSBKT</ev>
+		<length>6</length>
+		<value id="0x10">Writes_Enabled</value>
+		<value id="0x20">Writes_Disabled</value>
+		<mask>0x30</mask>
+		<byte>5</byte>
+	</Section>
+	<Section name="POST_F1_Prompt">
+		<helptext><![CDATA[Controls display of the F1 POST prompt.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>8</length>
+		<value id="0x01">Enabled</value>
+		<value id="0x02">Disabled</value>
+		<value id="0x03">Delayed</value>
+		<mask>0x03</mask>
+		<byte>7</byte>
+	</Section>
+	<Section name="Hyperthreading">
+		<helptext><![CDATA[Toggles hyperthreading on systems that support it.  This setting is supported on G5 and earlier systems.  For newer systems, use the Intel_Hyperthreading setting.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>8</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x80">Disabled</value>
+		<mask>0x80</mask>
+		<byte>7</byte>
+	</Section>
+	<Section name="NMI_Debug_Button">
+		<helptext><![CDATA[Allows generating NMI(non-maskable interrupt) via NMI button/jumper for hardware debugging.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>8</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x40">Disabled</value>
+		<mask>0x40</mask>
+		<byte>7</byte>
+	</Section>
+	<Section name="ACPI_Power_Button">
+		<helptext><![CDATA[Switches power button to operate in APCI mode.  Enabling permits enhanced power button handling(push and hold to shut off, and single push to shutdown) instead of on/off operation.]]></helptext>
+		<ev>CQSBKT</ev>
+		<length>10</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x10">Disabled</value>
+		<mask>0x10</mask>
+		<byte>9</byte>
+	</Section>
+	<Section name="CPU_Performance">
+		<helptext><![CDATA[Allows tuning of system performance goals]]></helptext>
+		<ev>CQSBKT</ev>
+		<length>10</length>
+		<value id="0x00">Memory</value>
+		<value id="0x40">IO</value>
+		<mask>0x40</mask>
+		<byte>9</byte>
+	</Section>
+	<Section name="ASR">
+		<helptext><![CDATA[Allows enabling/disabling of the Automatic Server Recovery feature.]]></helptext>
+		<ev>CQHSTS</ev>
+		<length>1</length>
+		<value id="48">Disabled</value>
+		<value id="49">Enabled</value>
+	</Section>
+	<Section name="ASR_Timeout">
+		<helptext><![CDATA[User Configuration Timeout for Automatic Server Recovery]]></helptext>		
+		<ev>CQHCPR</ev>
+		<length>3</length>
+		<value id="2">2 Minutes</value>
+		<value id="5">5 Minutes</value>
+		<value id="10">10 Minutes</value>
+		<value id="15">15 Minutes</value>
+		<value id="20">20 Minutes</value>
+		<value id="30">30 Minutes</value>
+		<byte>2</byte>
+	</Section>
+	<Section name="Thermal_Shutdown">
+		<helptext><![CDATA[Enables shutdown when thermal events occur]]></helptext>
+		<ev>CQHCSM</ev>
+		<length>1</length>
+		<value id="0">Disabled</value>
+		<value id="1">Enabled</value>
+		<byte>0</byte>
+	</Section>
+	<Section name="Custom_Post_Message">
+		<helptext><![CDATA[Customized message to be displayed on the screen during POST]]></helptext>
+		<ev>CQHPMSG</ev>
+		<length>64</length>
+		<record_size>64</record_size>
+		<format>text</format>
+		<Fields>
+			<Field>
+				<Field_name>Line</Field_name>
+				<Field_size>64</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="RBSU_Language">
+		<helptext><![CDATA[Language to use for the RBSU menus]]></helptext>
+		<ev>CQHRBL</ev>
+		<length>1</length>
+	</Section>
+	<Section name="PXE_NIC1">
+		<helptext><![CDATA[Enable or disable PXE boot on the given NIC]]></helptext>
+		<ev>CQHPXE</ev>
+		<length>2</length>
+		<value id="0x01">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="PXE_NIC2">
+		<helptext><![CDATA[Enable or disable PXE boot on the given NIC]]></helptext>
+		<ev>CQHPXE</ev>
+		<length>2</length>
+		<value id="0x02">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="PXE_NIC3">
+		<helptext><![CDATA[Enable or disable PXE boot on the given NIC]]></helptext>
+		<ev>CQHPXE</ev>
+		<length>2</length>
+		<value id="0x04">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="PXE_NIC4">
+		<helptext><![CDATA[Enable or disable PXE boot on the given NIC]]></helptext>
+		<ev>CQHPXE</ev>
+		<length>2</length>
+		<value id="0x08">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x08</mask>
+	</Section>
+	<Section name="PXE_NIC5">
+		<helptext><![CDATA[Enable or disable PXE boot on the given NIC]]></helptext>
+		<ev>CQHPXE</ev>
+		<length>2</length>
+		<value id="0x10">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x10</mask>
+	</Section>
+	<Section name="BIOS_Console">
+		<helptext><![CDATA[Used to select the port for the BIOS console]]></helptext>	
+		<ev>CQHCON</ev>
+		<value id="0">Disabled</value>
+		<value id="1">COM1</value>
+		<value id="2">COM2</value>
+		<value id="3">Auto</value>
+		<value id="4">COM3</value>
+		<value id="5">COM4</value>
+		<length>1</length>
+	</Section>
+	<Section name="BIOS_Baud_Rate">
+		<helptext><![CDATA[BIOS console communications settings]]></helptext>	
+		<ev>CQHBAUD</ev>
+		<value id="1">9600</value>
+		<value id="2">19200</value>
+		<value id="3">57600</value>
+		<value id="4">115200</value>
+		<length>1</length>
+	</Section>
+	<Section name="BIOS_Type">
+		<helptext><![CDATA[BIOS console communications settings]]></helptext>	
+		<ev>CQHTTY</ev>
+		<value id="1">VT100</value>
+		<value id="2">ANSI</value>
+		<length>1</length>
+	</Section>
+	<Section name="EMS_Console">
+		<helptext><![CDATA[Used to select the port for the EMS console]]></helptext>	
+		<ev>CQHEMS</ev>
+		<value id="0">Disabled</value>
+		<value id="1">Local</value>
+		<value id="2">Remote</value>
+		<value id="3">COM1</value>
+		<value id="4">COM2</value>
+		<value id="5">COM3</value>
+		<value id="6">COM4</value>
+		<length>1</length>
+	</Section>
+	<Section name="BIOS_Interface_Mode">
+		<helptext><![CDATA[BIOS console communications settings]]></helptext>	
+		<ev>CQHCLI</ev>
+		<value id="0">Full Screen Mode</value>
+		<value id="1">CLI Mode</value>
+		<value id="2">Auto Mode</value>
+		<length>1</length>
+	</Section>
+	<Section name="SAN_Boot_Controller_Order">
+		<helptext><![CDATA[Enables default boot from SAN on systems that support it]]></helptext>			
+		<ev>CQHBFS</ev>
+		<value id="0x00">Default</value>
+		<value id="0x01">Fibre First</value>
+		<length>1</length>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="SAN_Boot_Embedded_Controller">
+		<helptext><![CDATA[SAN Boot option for systems that support it]]></helptext>			
+		<ev>CQHBFS</ev>
+		<value id="0x00">Enabled</value>
+		<value id="0x02">Disabled</value>
+		<length>1</length>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="System_Embedded_IDE">
+		<helptext><![CDATA[Settings for the embedded IDE controller on systems that support it]]></helptext>	
+		<ev>CQSBKT</ev>
+		<length>9</length>
+		<value id="0x01">Secondary_Disabled</value>
+		<value id="0x02">Enabled</value>
+		<value id="0x03">Disabled</value>
+		<mask>0x03</mask>
+		<byte>8</byte>
+	</Section>
+	<Section name="Embedded_Virtual_Disk">
+		<helptext><![CDATA[Enables or disable the Virtual Disk when available.]]></helptext>			
+		<ev>CQHVFB</ev>
+		<length>2</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x02">Disabled</value>
+		<mask>0x02</mask>
+		<byte>1</byte>
+	</Section>
+	<Section name="Virtual_Install_Disk">
+		<helptext><![CDATA[Controls the Virtual Install Disk. The Virtual Install Disk may contain drivers specific to this server that an OS may use during installation..]]></helptext>			
+		<ev>CQHVID</ev>
+		<length>1</length>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+		<byte>0</byte>
+	</Section>
+        <Section name="HP_Power_Regulator">
+		<helptext><![CDATA[Allows tuning of the system power usage]]></helptext>	
+                <ev>CQHPER</ev>
+		<length>3</length>
+                <value id="0x00">OS_Control_Mode</value>
+                <value id="0x01">HP_Static_Low_Power_Mode</value>
+                <value id="0x02">HP_Dynamic_Power_Savings_Mode</value>
+                <value id="0x03">HP_Static_High_Performance_Mode</value>
+                <mask>0x03</mask>
+		<byte>1</byte>
+        </Section>
+        <Section name="HW_Prefetch">
+		<helptext><![CDATA[System performance tuning entry]]></helptext>	
+                <ev>CQHPER</ev>
+                <length>3</length>
+                <value id="0x00">Enabled</value>
+                <value id="0x01">Disabled</value>
+                <mask>0x01</mask>
+                <byte>0</byte>
+	</Section>
+        <Section name="Adjacent_Sector_Prefetch">
+		<helptext><![CDATA[System performance tuning entry]]></helptext>	
+                <ev>CQHPER</ev>
+                <length>3</length>
+                <value id="0x00">Enabled</value>
+                <value id="0x02">Disabled</value>
+                <mask>0x02</mask>
+                <byte>0</byte>
+	</Section>
+        <Section name="ATA_Drive_Write_Cache">
+		<helptext><![CDATA[Enables the write cache on attached ATA disks]]></helptext>	
+                <ev>CQHATA</ev>
+                <length>5</length>
+                <value id="0x00">Disabled</value>
+                <value id="0x08">Enabled</value>
+                <mask>0x08</mask>
+                <byte>4</byte>
+	</Section>
+        <Section name="Embedded_SATA_Configuration">
+		<helptext><![CDATA[Sets the mode for the embedded SATA controller. Set RAID mode to enable B120i controller.]]></helptext>	
+                <ev>CQHATA</ev>
+                <length>5</length>
+                <value id="0x00">SATA_Legacy_Enabled</value>
+                <value id="0x01">SATA_RAID_Enabled</value>
+                <value id="0x02">SATA_AHCI_Enabled</value>
+                <mask>0x07</mask>
+                <byte>3</byte>
+	</Section>
+	<Section name="HP_Dynamic_Smart_Array_RAID_Controller">
+		<helptext><![CDATA[Enables RAID mode on the following controllers: B320i.  Use Embedded_SATA_Configuration section for the following controllers: B120i.]]></helptext>	
+                <ev>CQHLSI</ev>
+                <length>1</length>
+                <value id="0x00">Disabled</value>
+                <value id="0x01">Enabled</value>
+                <mask>0x01</mask>
+                <byte>0</byte>
+	</Section>
+	<Section name="BIOS_Enhanced_RAID">
+		<helptext><![CDATA[Enables enhanced RAID mode]]></helptext>	
+                <ev>CQHSWRD</ev>
+                <length>1</length>
+                <value id="0x00">Disabled</value>
+                <value id="0x01">Enabled</value>
+                <mask>0x01</mask>
+                <byte>0</byte>
+	</Section>
+	<Section name="No_Execute_Memory_Protection">
+		<helptext><![CDATA[Enables No Execute mode if the system CPU supports it]]></helptext>	
+		<ev>CQSBKT</ev>
+		<length>13</length>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+		<byte>12</byte>
+	</Section>
+	<Section name="Legacy_SERR">
+		<ev>CQSBKT</ev>
+		<length>13</length>
+		<value id="0x02">Disabled</value>
+		<value id="0x00">Enabled</value>
+		<mask>0x02</mask>
+		<byte>12</byte>
+	</Section>
+	<Section name="CPU_Virtualization">
+		<helptext><![CDATA[When enabled, a Virtual Machine Manager supporting this feature can utilize hardware capabilities provided by the server.]]></helptext>
+		<altname>Intel_Virtualization</altname>
+		<ev>CQSBKT</ev>
+		<length>13</length>
+		<value id="0x00">Disabled</value>
+		<value id="0x04">Enabled</value>
+		<mask>0x04</mask>
+		<byte>12</byte>
+	</Section>
+	<Section name="Embedded_NIC">
+		<helptext><![CDATA[This setting allows the enabling/disabling of network boot(PXE) on embedded network controllers in the server.]]></helptext>	
+		<ev>CQHNIC</ev>
+		<length>30</length>
+		<record_size>1</record_size>
+		<Fields>
+			<Field>
+				<Field_name>NIC</Field_name>
+				<Field_size>1</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="Linux_HPET_Timer">
+		<ev>CQHL64</ev>
+		<length>1</length>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+		<byte>0</byte>
+	</Section>
+	<Section name="Diskette_Boot">
+		<cmos>0x13</cmos>
+		<value id="0x00">Enabled</value>
+		<value id="0x08">Disabled</value>
+		<mask>0x08</mask>
+	</Section>
+	<Section name="NumLock">
+		<cmos>0x2C</cmos>
+		<value id="0x40">On</value>
+		<value id="0x00">Off</value>
+		<mask>0x40</mask>
+	</Section>
+	<Section name="POST_Speed_Up">
+		<cmos>0x2D</cmos>
+		<value id="0x00">Disabled</value>
+		<value id="0x10">Enabled</value>
+		<mask>0x10</mask>
+	</Section>
+	<Section name="Integrated_Diskette_Controller">
+		<cmos>0x26</cmos>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x03</mask>
+	</Section>
+	<Section name="PCI_Bus_Reset">
+		<cmos>0x1F</cmos>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Hot_Plug_Reservation">
+		<nvram>0x4B</nvram>
+		<value id="0">Disabled</value>
+		<value id="1">Normal</value>
+		<value id="2">Extensive</value>
+		<value id="3">Auto Set</value>
+	</Section>
+	<Section name="Memory_Protection">
+		<helptext><![CDATA[Sets the type of memory protection used on the server.  Not all modes are supported on all servers.]]></helptext>
+		<nvram>0x52</nvram>
+		<value id="0x00">Advanced_ECC_Support</value>
+		<value id="0x01">Online_Spare_with_Advanced_ECC</value>
+		<value id="0x02">Mirrored_with_Advanced_ECC</value>
+		<value id="0x04">Lockstep_Mode_with_Advanced_ECC</value>
+		<value id="0x08">RAID</value>
+		<value id="0x80">Advanced_ECC_with_Hot-Add_support)</value>
+		<mask>0x8F</mask>
+	</Section>
+	<Section name="Advanced_Memory_Protection_Gen8">
+		<helptext><![CDATA[Sets the type of memory protection used on the server.  Not all modes are supported on all servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<nvram>0x52</nvram>
+		<value id="0x00">Advanced_ECC_Support</value>
+		<value id="0x01">Online_Spare_with_Advanced_ECC</value>
+		<mask>0x07</mask>
+	</Section>
+	<Section name="Automatic_Poweron">
+		<helptext><![CDATA[For G7 and earlier only. Configures server to automatically power on when A/C power is applied to the system. This setting is not support by blade servers.]]></helptext>
+		<nvram>0x6A</nvram>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Automatic_Poweron_Gen8">
+		<helptext><![CDATA[For Gen8 and later. Configures server to automatically power on when A/C power is applied to the system. This setting is not support by blade servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<nvram>0x6A</nvram>
+		<value id="0x00">Always_Power_On</value>
+		<value id="0x03">Always_Remain_Off</value>
+		<value id="0x01">Restore_Last_Power_State</value>
+		<mask>0x03</mask>
+	</Section>
+	<Section name="Power-On_Delay">
+		<helptext><![CDATA[Sets the delay for the system to be begin the boot up process]]></helptext>	
+		<ev>CQSBKT</ev>
+		<length>13</length>
+		<value id="0x00">No_Delay</value>
+		<value id="0x10">15_Second</value>
+		<value id="0x20">30_Second</value>
+		<value id="0x30">45_Second</value>
+		<value id="0x40">60_Second</value>
+		<value id="0xF0">Random</value>
+		<mask>0xF0</mask>
+		<byte>12</byte>
+	</Section>
+	<Section name="USB_Capability">
+		<nvram>0x78</nvram>
+		<value id="0x01">USB_2.0</value>
+		<value id="0x00">USB_1.1</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="PCI_Enumeration_Method">
+	      	<helptext><![CDATA[Controls the PCI enumeration method on G6 servers. Supported on G6 servers only.]]></helptext>
+		<nvram>0x79</nvram>
+		<value id="0x00">Standard</value>
+		<value id="0x01">Legacy</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="RCMODE">
+		<helptext><![CDATA[Sets the mode for the Remote Console.]]></helptext>
+		<ev>CQHRGS</ev>
+		<length>1</length>
+		<value id="0x00">Admin_NOSEG</value>
+		<value id="0x01">User_NOSEG</value>
+		<value id="0x02">Setup_NOSEG</value>
+		<value id="0x04">Admin_SEG</value>
+		<value id="0x05">User_SEG</value>
+		<value id="0x06">Setup_SEG</value>
+		<byte>0</byte>
+	</Section>
+	<Section name="Asset_Tag_Protection">
+		<helptext><![CDATA[When set to Locked, the Asset tag will not be erased if default system settings are restored.]]></helptext>
+		<ev>CQHLCK</ev>
+		<length>1</length>
+		<value id="0x00">Unlocked</value>
+		<value id="0x01">Locked</value>
+		<mask>0x01</mask>
+		<byte>0</byte>
+	</Section>
+	<Section name="Shared_ILO_Port">
+		<helptext><![CDATA[Switches iLo from using its dedicated NIC port to sharing the first NIC of the system for ML310 G5.]]></helptext>
+		<ev>CQSBKT</ev>
+		<length>14</length>
+		<value id="0x00">Dedicated_Port</value>
+		<value id="0x04">Shared_Port</value>
+		<mask>0x04</mask>
+		<byte>13</byte>
+	</Section>
+	<Section name="Option_ROM_Loading_Sequence">
+		<helptext><![CDATA[Choses whether Option ROMs for embedded devices or expansion cards are loaded first.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>12</length>
+		<value id="0x00">Option_Card_First</value>
+		<value id="0x10">Embedded_First</value>
+		<mask>0x10</mask>
+		<byte>11</byte>
+	</Section>
+	<Section name="Removable_Flash_Media_Boot_Sequence">
+		<helptext><![CDATA[Selects which USB or SD card devices will be searched first when enumerating boot devices.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>15</length>
+		<value id="0x00">Internal_Drivekeys_First</value>
+		<value id="0x40">External_Drivekeys_First</value>
+		<value id="0x80">Internal_SD_Card_First</value>
+		<mask>0xC0</mask>
+		<byte>14</byte>
+	</Section>
+	<Section name="USB_Port_Boot_Order_G5">
+		<helptext><![CDATA[Allows the USB Port Boot order to be set on G5 or older systems.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>14</length>
+		<value id="0x00">Internal</value>
+		<value id="0x08">External</value>
+		<mask>0x08</mask>
+		<byte>13</byte>
+	</Section>
+	<Section name="USB_Port_Boot_Order_G6">
+		<helptext><![CDATA[Allows the USB Port Boot order to be set on G6 or newer systems.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>15</length>
+		<value id="0x00">Internal</value>
+		<value id="0x40">External</value>
+		<value id="0x80">SD_Card</value>
+		<mask>0xC0</mask>
+		<byte>14</byte>
+	</Section>
+	<Section name="USB_Boot_Support">
+		<helptext><![CDATA[Supported on Gen8 only. This option allows the user to prevent the system from booting all USB devices connected to the server. This option will also disable booting iLO virtual media.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>12</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x20">Disabled</value>
+		<mask>0x20</mask>
+		<byte>11</byte>
+	</Section>
+	<Section name="Low_Power_Halt_state">
+		<helptext><![CDATA[Allows the enable/disable of the Low Power Halt state(C1E).]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>14</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x20">Disabled</value>
+		<mask>0x20</mask>
+		<byte>13</byte>
+	</Section>
+	<Section name="Intel_Processor_Core_Disable">
+		<helptext><![CDATA[Allows disabling of processor cores using Intel's Core Multi-Processing(CMP) technology.]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x5c</nvram>
+		<value id="0x00">All_Cores_Enabled</value>
+		<value id="0x01">One_Core_Enabled</value>
+		<value id="0x02">Half_Core_Enabled</value>
+		<mask>0x03</mask>
+	</Section>
+	<Section name="Intel_Processor_Turbo_Mode">
+		<helptext><![CDATA[Allows Intel processors to transition to a higher frequency than its rated speed if the processor has available headroom and is within temperature specification.]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<ev>CQSBKT</ev>
+		<length>15</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+		<byte>14</byte>
+	</Section>
+	<Section name="Intel_VT-d2">
+		<helptext><![CDATA[When enabled, a Virtual Machine Manager supporting this feature can utilize hardware capabilities provided by Intel's Virtualization Technology for Directed I/O.]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<ev>CQSBKT</ev>
+		<length>15</length>
+		<value id="0x00">Disabled</value>
+		<value id="0x08">Enabled</value>
+		<mask>0x08</mask>
+		<byte>14</byte>
+	</Section>
+	<Section name="HP_Power_Profile">
+		<helptext><![CDATA[Selects the level of power versus performance for the system.]]></helptext>					
+		<ev>CQHPWR</ev>
+		<length>1</length>
+		<value id="0x00">Balanced</value>
+		<value id="0x01">Minimum_Power</value>
+		<value id="0x02">Maximum_Performance</value>
+		<value id="0x03">Custom</value>
+		<mask>0x03</mask>
+		<byte>0</byte>
+	</Section>
+	<Section name="Intel_QPI_Link_Power_Management">
+		<helptext><![CDATA[Places the Quick Path Interconnect (QPI) links into a low power state to save power.]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x58</nvram>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Intel_QPI_Link_Frequency">
+		<helptext><![CDATA[This option allows the user to set the QPI Link frequency to a lower speed. Running at a lower frequency may reduce power consumption but may also impact system performance.]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x58</nvram>
+		<value id="0x00">Auto</value>
+		<value id="0x02">Min_QPI_Speed</value>
+		<mask>0x02</mask>
+	</Section>
+        <Section name="Intel_Minimum_Processor_Idle_Power_State">
+		<helptext><![CDATA[Selects the lowest idle power state (C-state) the OS will use. The higher the C-state, the lower the power usage. C6 is the lowest power idle state supported. For G6/G7/Gen8 BIOS 05/05/2011 or later, this is the Power Core State. ]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+                <ev>CQHPER</ev>
+		<length>3</length>
+                <value id="0x00">No_C-States</value>
+                <value id="0x04">C1E_State</value>
+                <value id="0x05">C3_State</value>
+                <value id="0x07">C6_State</value>
+                <mask>0x07</mask>
+		<byte>2</byte>
+        </Section>
+        <Section name="Intel_Minimum_Processor_Idle_Power_Package_State">
+		<helptext><![CDATA[Selects the lowest idle power package state (C-state).]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+                <ev>CQHPCKG</ev>
+		<length>1</length>
+                <value id="0x00">No_Package_State</value>
+                <value id="0x01">Package C3 State</value>
+                <value id="0x02">Package_C6_State</value>
+                <mask>0x03</mask>
+		<byte>0</byte>
+        </Section>
+	<Section name="Maximum_Memory_Bus_Frequency">
+		<helptext><![CDATA[Configures memory system to run memory at a lower maximum speed than what is supported by the installed processor and DIMM configuration.  Setting to Auto configures max speed supported.]]></helptext>					
+		<nvram>0x53</nvram>
+		<value id="0x00">Auto</value>
+		<value id="0x01">800MHz</value>
+		<value id="0x02">1066MHz</value>
+		<value id="0x03">1333MHz</value>
+	</Section>
+	<Section name="Memory_Interleaving">
+		<helptext><![CDATA[Modifies the level of interleaving for which the memory system will be configured.  Typically, higher levels of memory interleaving result in maximum performance, but reducing interleaving level may result in power savings.]]></helptext>					
+		<nvram>0x5F</nvram>
+		<value id="0x00">Full_Interleaving</value>
+		<value id="0x04">Channel_Only_Interleaving</value>
+		<value id="0x06">No_Interleaving</value>
+		<mask>0x06</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Generation_20_Support">
+		<helptext><![CDATA[Allows disabling PCI-E Gen 2.0 support on Intel based servers. If disabled, all PCI-Express devices will run at PCI-E 1.0 speeds (2.5 Gb/s) even if a PCI-E device is 2.0 capable (5.0 Gb/s).]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x7E</nvram>
+		<value id="0x00">Auto</value>
+		<value id="0x01">Force_PCI-E_Generation_1</value>
+		<value id="0x02">Force_PCI-E_Generation_2</value>
+		<mask>0x03</mask>
+	</Section>
+	<Section name="Thermal_Configuration">
+		<helptext><![CDATA[Selects the fan cooling solution for the system(not for ML350 G6).]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>8</length>
+		<value id="0x04">Optimal_Cooling</value>
+		<value id="0x08">Increased_Cooling</value>
+		<value id="0x0C">Maximum_Cooling</value>
+		<mask>0x0C</mask>
+		<byte>7</byte>
+	</Section>
+	<Section name="Thermal_Configuration_ML350_G6">
+		<helptext><![CDATA[Selects the fan cooling solution for the ML350 G6 server.]]></helptext>					
+		<romfamilies>
+			<romfamily>D22</romfamily>
+		</romfamilies>
+		<ev>CQSBKT</ev>
+		<length>8</length>
+		<value id="0x00">Optimal_Cooling</value>
+		<value id="0x08">Increased_Cooling</value>
+		<value id="0x04">Reduced_Acoustics</value>
+		<mask>0x0C</mask>
+		<byte>7</byte>
+	</Section>
+	<Section name="Intel_TPM_Functionality">
+		<helptext><![CDATA[For Intel G7. This option allows the enabling of the Trusted Platform Module and BIOS secure startup.]]></helptext>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x7A</nvram>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Intel_TPM_Visibility">
+		<helptext><![CDATA[For Intel G7. This option provides the ability to hide the TPM from the operating system.]]></helptext>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x7A</nvram>
+		<value id="0x00">Unhide</value>
+		<value id="0x02">Hide</value>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="Intel_TPM_Expansion_ROM_Measuring">
+		<helptext><![CDATA[For Intel G7. This option allows enabling the BIOS to measure the PCI/PCI-e expansion (Option) ROM code and store that measurement into the TPM.]]></helptext>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x7A</nvram>
+		<value id="0x00">Disabled</value>
+		<value id="0x04">Enabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="AMD_TPM_Functionality">
+		<helptext><![CDATA[For AMD G7. This option allows the enabling of the Trusted Platform Module and BIOS secure startup.]]></helptext>
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<cmos>0x41</cmos>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="AMD_TPM_Visibility">
+		<helptext><![CDATA[For AMD G7. This option provides the ability to hide the TPM from the operating system.]]></helptext>
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<cmos>0x41</cmos>
+		<value id="0x00">Unhide</value>
+		<value id="0x02">Hide</value>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="AMD_TPM_Expansion_ROM_Measuring">
+		<helptext><![CDATA[For AMD G7. This option allows enabling the BIOS to measure the PCI/PCI-e expansion (Option) ROM code and store that measurement into the TPM.]]></helptext>
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<cmos>0x41</cmos>
+		<value id="0x00">Disabled</value>
+		<value id="0x04">Enabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="TPM_Functionality_Gen8">
+		<helptext><![CDATA[For Gen8 only. This option allows the enabling of the Trusted Platform Module and BIOS secure startup.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<nvram>0x7A</nvram>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="TPM_Visibility_Gen8">
+		<helptext><![CDATA[For Gen8 only. This option provides the ability to hide the TPM from the operating system.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<nvram>0x7A</nvram>
+		<value id="0x00">Unhide</value>
+		<value id="0x02">Hide</value>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="TPM_Expansion_ROM_Measuring_Gen8">
+		<helptext><![CDATA[For Gen8 only. This option allows enabling the BIOS to measure the PCI/PCI-e expansion (Option) ROM code and store that measurement into the TPM.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<nvram>0x7A</nvram>
+		<value id="0x00">Disabled</value>
+		<value id="0x04">Enabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="Node_Interleaving">
+		<helptext><![CDATA[Allows the enabling/disabling of node interleaving on Intel platforms.]]></helptext>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x5F</nvram>
+		<value id="0x01">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Intel_Hyperthreading">
+		<helptext><![CDATA[Toggles hyperthreading on Intel based G6 and greater systems]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x5D</nvram>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="AMD_RevF_Node_Interleaving">
+		<helptext><![CDATA[Allows the enabling/disabling of node interleaving on AMD platforms.]]></helptext>
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<nvram>0xC5</nvram>
+		<value id="0x10">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x10</mask>
+	</Section>
+	<Section name="PCI_Bus_Padding_Option">
+		<helptext><![CDATA[Option allows the user to disable the default PCI Bus setting where each expansion slot is provided an extra PCI Bus number. By default, the system ROM will pad one PCI bus per bridge to not affect current bus numbering schemes.]]></helptext>
+		<nvram>0x76</nvram>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="PCI_Bus_Padding_Option_Gen8">
+		<helptext><![CDATA[For Gen8 servers only. Option allows the user to disable the default PCI Bus setting where each expansion slot is provided an extra PCI Bus number. By default, the system ROM will pad one PCI bus per bridge to not affect current bus numbering schemes.]]></helptext>
+		<nvram>0x55</nvram>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Power-on_Logo">
+		<helptext><![CDATA[Allows disabling of HP logo at system boot.]]></helptext>					
+		<ev>CQHPUS</ev>
+		<length>1</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Hide_Option_ROM_Messages">
+		<helptext><![CDATA[Allows disabling of Hide Option ROM Messages feature.]]></helptext>					
+		<ev>CQHPUS</ev>
+		<length>1</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x02">Disabled</value>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="Redundant_Power_Supply_Mode">
+		<helptext><![CDATA[Allows configuring how the system will handle redundant power supply configs.  Balanced mode shares the power delivery equally between installed power supplies.]]></helptext>					
+		<ev>CQHHEM</ev>
+		<length>1</length>
+		<value id="0x00">Balanced_Mode</value>
+		<value id="0x11">High_Efficiency_Auto</value>
+		<value id="0x15">High_Efficiency_Odd_Standby</value>
+		<value id="0x13">High_Efficiency_Even_Standby</value>
+		<mask>0x17</mask>
+	</Section>
+	<Section name="Dynamic_Power_Savings_Mode_Response">
+		<helptext><![CDATA[Allows the system ROM to control processor performance and power state depending on the processor workload.]]></helptext>					
+		<ev>CQHDPT</ev>
+		<length>1</length>
+		<value id="0x01">Fast</value>
+		<value id="0x78">Slow</value>
+		<value id="0x28">Slow_Gen8</value>
+		<mask>0xFF</mask>
+		<byte>0</byte>
+	</Section>
+	<Section name="Memory_Speed_with_2_DIMMs_per_Channel">
+		<helptext><![CDATA[Allows system to run DIMMs at 1333 Mhz when up to 2 DIMMs are installed on a memory channel. Function validated with HP DIMMs. HP recommends this setting remain at the default of 1066 MHz if utilizing non HP-DIMMs.]]></helptext>					
+		<nvram>0x5F</nvram>
+		<value id="0x00">1066MHz_Maximum</value>
+		<value id="0x20">1333MHz_Maximum</value>
+		<mask>0x20</mask>
+	</Section>
+	<Section name="Video_Options">
+		<helptext><![CDATA[By default, system ROM disables the embedded video controller when an optional video controller is detected.  Option allows embedded video to remain enabled for iLO remote video.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>14</length>
+		<value id="0x00">Optional_Primary_Embedded_Disabled</value>
+		<value id="0x80">Optional_Primary_Embedded_Secondary</value>
+		<value id="0x40">Embedded_Primary_Optional_Secondary</value>
+		<mask>0xC0</mask>
+		<byte>13</byte>
+	</Section>
+	<Section name="NIC1_Ports">
+		<helptext><![CDATA[Option allows individual network ports to be disabled on some G6 systems.]]></helptext>
+		<ev>CQHPORT</ev>
+		<length>1</length>
+		<value id="0x00">All_Enabled</value>
+		<value id="0x02">Port2_Disabled</value>
+		<value id="0x03">All_Disabled</value>
+		<mask>0x03</mask>		
+		<byte>0</byte>
+	</Section>
+	<Section name="NIC2_Ports">
+		<helptext><![CDATA[Option allows individual network ports to be disabled on some G6 systems.]]></helptext>		
+		<ev>CQHPORT</ev>
+		<length>2</length>
+		<value id="0x00">All_Enabled</value>
+		<value id="0x02">Port2_Disabled</value>
+		<value id="0x03">All_Disabled</value>
+		<mask>0x03</mask>		
+		<byte>1</byte>
+	</Section>
+	<Section name="Embedded_NIC2">
+		<romfamilies>
+			<romfamily>V04</romfamily>
+		</romfamilies>
+		<romdates>
+			<greaterthan>06/01/09</greaterthan>
+		</romdates>
+		<ev>CQSBKT</ev>
+		<length>15</length>
+		<value id="0x00">Enable</value>
+		<value id="0x20">Disable</value>
+		<mask>0x20</mask>
+		<byte>14</byte>
+	</Section>
+	<Section name="HyperTransport">
+		<helptext><![CDATA[Configures HyperTransport Frequency mode on AMD processor G6 servers and older systems.]]></helptext>
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<nvram>0xFF</nvram>
+		<value id="0x00">HT1</value>
+		<value id="0x01">HT3</value>
+		<value id="0x02">Invalid_Setting_1</value>
+		<value id="0x03">Invalid_Setting_2</value>
+		<mask>0xFF</mask>
+	</Section>
+	<Section name="HyperTransport_G7">
+		<helptext><![CDATA[Configures HyperTransport Frequency mode on AMD processor G7 servers.]]></helptext>
+		<romfamilies>
+			<romfamily>A16</romfamily>
+			<romfamily>A18</romfamily>
+			<romfamily>A19</romfamily>
+			<romfamily>A20</romfamily>
+			<romfamily>A24</romfamily>
+			<romfamily>A31</romfamily>
+		</romfamilies>
+		<nvram>0xCD</nvram>
+		<value id="0x00">HT3</value>
+		<value id="0x10">HT1</value>
+		<mask>0x10</mask>
+	</Section>
+	<Section name="Coherent_Link">
+		<helptext><![CDATA[Sets the HyperTransport Coherent Link Option.]]></helptext>
+		<romfamilies>
+			<romfamily>A24</romfamily>
+			<romfamily>A31</romfamily>
+		</romfamilies>
+		<nvram>0xCD</nvram>
+		<value id="0x00">Dual_Coherent_Link</value>
+		<value id="0x08">Single_Coherent_Link</value>
+		<mask>0x08</mask>
+	</Section>
+	<Section name="Power_Supply_Requirements_Override">
+		<helptext><![CDATA[Overrides the number of power supplies required.  This setting will be ignored on the DL580 G7.]]></helptext>					
+		<ev>CQSBKT</ev>
+		<length>15</length>
+		<value id="0x00">Normal</value>
+		<value id="0x02">2_Required_3_Redundancy</value>
+		<value id="0x04">1_Required_2_Redundancy</value>
+		<mask>0x06</mask>
+		<byte>14</byte>
+	</Section>
+	<Section name="Power_Supply_Requirements_Override_DL580G7">
+		<helptext><![CDATA[Overrides the number of power supplies required. For use by the DL580/DL585 G7 only.]]></helptext>					
+		<romfamilies>
+			<romfamily>P65</romfamily>
+			<romfamily>A16</romfamily>
+		</romfamilies>
+		<ev>CQSBKT</ev>
+		<length>16</length>
+		<value id="0x00">Default</value>
+		<value id="0x01">1_Required_2_Redundancy</value>
+		<value id="0x02">2_Required_3_Redundancy</value>
+		<value id="0x03">2_Required_4_Redundancy</value>
+		<value id="0x04">3_Required_4_Redundancy</value>
+		<value id="0x05">4_Required_0_Redundancy</value>
+		<mask>0x07</mask>
+		<byte>15</byte>
+	</Section>
+	<Section name="Remote_Graphics_Mode">
+		<helptext><![CDATA[This option redirects the video output to the embedded controller through POST when a 3rd party graphics card is installed, and auto switches to the 3rd party card during OS load.  Only for ML370 G6.]]></helptext>
+		<romfamilies>
+			<romfamily>P63</romfamily>
+		</romfamilies>
+		<ev>CQHRGM</ev>
+		<length>1</length>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="AMD_Ultra_Low_Power_Mode">
+		<helptext><![CDATA[Controls the ultra low power state on AMD servers]]></helptext>
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<ev>CQHULP</ev>
+		<length>1</length>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Hemisphere_Mode">
+		<helptext><![CDATA[Hemisphere mode is equivalent to socket level interleaving.]]></helptext>
+		<romfamilies>
+			<romfamily>P65</romfamily>
+		</romfamilies>
+		<nvram>0x5F</nvram>
+		<value id="0x40">Auto</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x40</mask>
+	</Section>
+	<Section name="PCI_Express_Power_Management_Options">
+		<helptext><![CDATA[This feature enables placing the PCI-e links into an idle state when the links are not being utilized.]]></helptext>
+		<romfamilies>
+			<romfamily>P65</romfamily>
+			<romfamily>P66</romfamily>
+		</romfamilies>
+		<ev>CQHASPM</ev>
+		<length>1</length>
+		<value id="0x07">Optimized_Power_Performance</value>
+		<value id="0x03">Optimized_Power</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x07</mask>
+	</Section>
+	<Section name="Intel_NIC_DMA_Channels">
+		<helptext><![CDATA[]]></helptext>
+		<romfamilies>
+			<romfamily>R02</romfamily>
+		</romfamilies>
+		<nvram>0x6D</nvram>
+		<value id="0x01">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Collaborative_Power_Control">
+		<helptext><![CDATA[For OSes that support the Processor Clocking Control Interface, enabling this option allows the OS to request processor frequency changes even when the server has the Power Regulator option configured for Dynamic Power Savings Mode.]]></helptext>
+		<ev>CQHPCC</ev>
+		<length>1</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="AMD_PCI_Express_Generation_20_Support">
+		<helptext><![CDATA[Allows disabling PCI-E Gen 2.0 support on AMD based servers. If disabled, all PCI-Express devices will run at PCI-E 1.0 speeds (2.5 Gb/s) even if a PCI-E device is 2.0 capable (5.0 Gb/s).]]></helptext>					
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<cmos>0x45</cmos>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Force_PCI-E_Generation_1</value>
+		<value id="0x02">Force_PCI-E_Generation_2</value>
+		<mask>0x03</mask>
+	</Section>
+	<Section name="AMD_Minimum_Processor_Idle_Power_State">
+		<helptext><![CDATA[Selects the lowest idle power state (C-state) the OS will use. The higher the C-state, the lower the power usage.]]></helptext>					
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<cmos>0x49</cmos>
+		<value id="0x00">No_C-States</value>
+		<value id="0x01">C1E_State</value>
+		<value id="0x02">C6_State</value>
+		<mask>0x03</mask>
+	</Section>
+	<Section name="AMD_Processor_Core_Disable_G7">
+		<helptext><![CDATA[Selects the number of cores that will be enabled per processor socket on AMD G7 or later systems. The number of cores enabled per processor socket must be even (2,4,6,8,10,12). ]]></helptext>
+		<romfamilies>
+			<romfamily>A16</romfamily>
+			<romfamily>A18</romfamily>
+			<romfamily>A19</romfamily>
+			<romfamily>A20</romfamily>
+			<romfamily>A24</romfamily>
+			<romfamily>A31</romfamily>
+		</romfamilies>
+		<nvram>0x5C</nvram>
+		<value id="0x02">2_Cores_Enabled</value>
+		<value id="0x04">4_Cores_Enabled</value>
+		<value id="0x06">6_Cores_Enabled</value>
+		<value id="0x08">8_Cores_Enabled</value>
+		<value id="0x0A">10_Cores_Enabled</value>
+		<value id="0x0C">12_Cores_Enabled</value>
+	</Section>
+	<Section name="Processor_Core_Disable_Gen8">
+		<helptext><![CDATA[Selects the number of cores that will be enabled per processor socket on Gen8 systems.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<nvram>0x5C</nvram>
+		<value id="0x00">All_Cores_Enabled</value>
+		<value id="0x01">1_Core_Enabled</value>
+		<value id="0x02">2_Cores_Enabled</value>
+		<value id="0x03">3_Cores_Enabled</value>
+		<value id="0x04">4_Cores_Enabled</value>
+		<value id="0x05">5_Cores_Enabled</value>
+		<value id="0x06">6_Cores_Enabled</value>
+		<value id="0x07">7_Cores_Enabled</value>
+		<value id="0x08">8_Cores_Enabled</value>
+		<value id="0x09">9_Cores_Enabled</value>
+		<value id="0x0A">10_Cores_Enabled</value>
+		<value id="0x0B">11_Cores_Enabled</value>
+		<value id="0x0C">12_Cores_Enabled</value>
+		<value id="0x0D">13_Cores_Enabled</value>
+		<value id="0x0E">14_Cores_Enabled</value>
+		<value id="0x0F">15_Cores_Enabled</value>
+		<value id="0x10">16_Cores_Enabled</value>
+		<mask>0xFF</mask>
+	</Section>
+	<Section name="AMD_HPC_Optimization_Mode">
+		<helptext><![CDATA[Enables the HPC Optimization Mode on supported processors. Disabled by default.]]></helptext>
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<nvram>0x5D</nvram>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="AMD_Core_Performance_Boost">
+		<helptext><![CDATA[Enables AMD core performance boost on supported processors. Enabled by default.]]></helptext>
+		<romfamilies>
+			<romfamily>A16</romfamily>
+			<romfamily>A18</romfamily>
+			<romfamily>A19</romfamily>
+			<romfamily>A20</romfamily>
+			<romfamily>A26</romfamily>
+			<romfamily>A27</romfamily>
+			<romfamily>A28</romfamily>
+			<romfamily>A29</romfamily>
+			<romfamily>A30</romfamily>
+			<romfamily>A31</romfamily>
+		</romfamilies>
+		<nvram>0xCC</nvram>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="AMD_Memory_Interleaving">
+		<helptext><![CDATA[Sets the memory channel mode on AMD G7 servers.]]></helptext>					
+		<romfamilies>
+			<romfamily>A16</romfamily>
+			<romfamily>A18</romfamily>
+			<romfamily>A19</romfamily>
+			<romfamily>A20</romfamily>
+			<romfamily>A24</romfamily>
+			<romfamily>A31</romfamily>
+		</romfamilies>
+		<nvram>0xCC</nvram>
+		<value id="0x00">No_Interleaving</value>
+		<value id="0x80">Channel_Interleaving</value>
+		<mask>0x80</mask>
+	</Section>
+	<Section name="AMD_Memory_Interleaving_Gen8">
+		<helptext><![CDATA[Sets the memory channel mode on AMD Gen8 servers.]]></helptext>					
+		<romfamilies>
+			<romfamily>A26</romfamily>
+			<romfamily>A27</romfamily>
+			<romfamily>A28</romfamily>
+			<romfamily>A29</romfamily>
+		</romfamilies>
+		<nvram>0xCC</nvram>
+		<value id="0x00">No_Interleaving</value>
+		<value id="0x02">Channel_Interleaving</value>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="AMD_Core_Select_G6">
+		<helptext><![CDATA[Selects the number of cores that will be enabled per processor socket on AMD G6 systems.]]></helptext>
+		<romfamilies>
+			<romfamily>A07</romfamily>
+			<romfamily>A13</romfamily>
+			<romfamily>A14</romfamily>
+			<romfamily>A15</romfamily>
+			<romfamily>A17</romfamily>
+			<romfamily>A22</romfamily>
+		</romfamilies>
+		<nvram>0xCD</nvram>
+		<value id="0xF8">All_Cores_Enabled</value>
+		<value id="0x08">One_Core_Enabled</value>
+		<value id="0x10">Two_Cores_Enabled</value>
+		<value id="0x18">Three_Cores_Enabled</value>
+		<value id="0x20">Four_Cores_Enabled</value>
+		<value id="0x28">Five_Cores_Enabled</value>
+		<mask>0xF8</mask>
+	</Section>
+	<Section name="AMD_Memory_Channel_Mode">
+		<helptext><![CDATA[Sets the memory channel mode on AMD G6 systems.]]></helptext>					
+		<romfamilies>
+			<romfamily>A07</romfamily>
+			<romfamily>A13</romfamily>
+			<romfamily>A14</romfamily>
+			<romfamily>A15</romfamily>
+			<romfamily>A17</romfamily>
+			<romfamily>A22</romfamily>
+		</romfamilies>
+		<nvram>0xCC</nvram>
+		<value id="0x00">Combined_Mode</value>
+		<value id="0xC0">Independent_Mode</value>
+		<mask>0xC0</mask>
+	</Section>
+	<Section name="Memory_Power_Capping">
+		<helptext><![CDATA[This feature alllows configuring the memory capping.]]></helptext>					
+		<romfamilies>
+			<romfamily>P66</romfamily>
+		</romfamilies>
+		<nvram>0x5F</nvram>
+		<value id="0x80">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x80</mask>
+	</Section>
+	<Section name="DIMM_Idle_Power_Saving_Mode">
+		<helptext><![CDATA[This option provides the capability to enable or disable power throttling for the DIMMs installed in the system.]]></helptext>					
+		<romfamilies>
+			<romfamily>P65</romfamily>
+			<romfamily>P66</romfamily>
+			<romfamily>I25</romfamily>
+		</romfamilies>
+		<nvram>0x6F</nvram>
+		<value id="0x01">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Memory_Mapped_IO_Options">
+		<helptext><![CDATA[This option allows configuring the system to have a total amount of 2GB of Memory Mapped I/O or 3GB of Memory Mapped I/O.]]></helptext>					
+		<romfamilies>
+			<romfamily>P66</romfamily>
+		</romfamilies>
+		<nvram>0x55</nvram>
+		<value id="0x01">2GB_Memory_Mapped</value>
+		<value id="0x02">3GB_Memory_Mapped</value>
+		<value id="0x04">Automatic_Memory_Mapped</value>
+		<mask>0x07</mask>
+	</Section>
+	<Section name="Address_Mode_44bit">
+		<helptext><![CDATA[Enabling this option configures the system to run in 44-bit addressing mode.  This mode enables the system to run with a larger memory capacity.  OS support is required.]]></helptext>					
+		<romfamilies>
+			<romfamily>P66</romfamily>
+		</romfamilies>
+		<nvram>0x6F</nvram>
+		<value id="0x80">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x80</mask>
+	</Section>
+        <Section name="DCU_Prefetcher">
+		<helptext><![CDATA[System performance tuning entry.]]></helptext>	
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+                <ev>CQHPER</ev>
+                <length>3</length>
+                <value id="0x00">Enabled</value>
+                <value id="0x04">Disabled</value>
+                <mask>0x04</mask>
+                <byte>0</byte>
+	</Section>
+        <Section name="Data_Reuse">
+		<helptext><![CDATA[For G7 and earlier servers only. System performance tuning entry.]]></helptext>	
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+                <ev>CQHPER</ev>
+                <length>3</length>
+                <value id="0x00">Enabled</value>
+                <value id="0x08">Disabled</value>
+                <mask>0x08</mask>
+                <byte>0</byte>
+	</Section>
+	<Section name="NIC_1_Personality">
+		<helptext><![CDATA[]]></helptext>
+		<ev>CQHNICP</ev>
+		<length>8</length>
+                <value id="0x00">Ethernet</value>
+                <value id="0x01">iSCSI</value>
+                <value id="0x02">FCoE</value>
+                <mask>0xFF</mask>
+                <byte>6</byte>
+	</Section>
+	<Section name="NIC_2_Personality">
+		<helptext><![CDATA[]]></helptext>
+		<ev>CQHNICP</ev>
+		<length>16</length>
+                <value id="0x00">Ethernet</value>
+                <value id="0x01">iSCSI</value>
+                <value id="0x02">FCoE</value>
+                <mask>0xFF</mask>
+                <byte>14</byte>
+	</Section>
+	<Section name="NIC_3_Personality">
+		<helptext><![CDATA[]]></helptext>
+		<ev>CQHNICP</ev>
+		<length>24</length>
+                <value id="0x00">Ethernet</value>
+                <value id="0x01">iSCSI</value>
+                <value id="0x02">FCoE</value>
+                <mask>0xFF</mask>
+                <byte>22</byte>
+	</Section>
+	<Section name="NIC_4_Personality">
+		<helptext><![CDATA[]]></helptext>
+		<ev>CQHNICP</ev>
+		<length>32</length>
+                <value id="0x00">Ethernet</value>
+                <value id="0x01">iSCSI</value>
+                <value id="0x02">FCoE</value>
+                <mask>0xFF</mask>
+                <byte>30</byte>
+	</Section>
+	<Section name="NIC_5_Personality">
+		<helptext><![CDATA[]]></helptext>
+		<ev>CQHNICP</ev>
+		<length>40</length>
+                <value id="0x00">Ethernet</value>
+                <value id="0x01">iSCSI</value>
+                <value id="0x02">FCoE</value>
+                <mask>0xFF</mask>
+                <byte>38</byte>
+	</Section>
+	<Section name="NIC_6_Personality">
+		<helptext><![CDATA[]]></helptext>
+		<ev>CQHNICP</ev>
+		<length>48</length>
+                <value id="0x00">Ethernet</value>
+                <value id="0x01">iSCSI</value>
+                <value id="0x02">FCoE</value>
+                <mask>0xFF</mask>
+                <byte>46</byte>
+	</Section>
+	<Section name="NIC_7_Personality">
+		<helptext><![CDATA[]]></helptext>
+		<ev>CQHNICP</ev>
+		<length>56</length>
+                <value id="0x00">Ethernet</value>
+                <value id="0x01">iSCSI</value>
+                <value id="0x02">FCoE</value>
+                <mask>0xFF</mask>
+                <byte>54</byte>
+	</Section>
+	<Section name="NIC_8_Personality">
+		<helptext><![CDATA[]]></helptext>
+		<ev>CQHNICP</ev>
+		<length>64</length>
+                <value id="0x00">Ethernet</value>
+                <value id="0x01">iSCSI</value>
+                <value id="0x02">FCoE</value>
+                <mask>0xFF</mask>
+                <byte>62</byte>
+	</Section>
+	<Section name="QPI_Bandwidth_Optimization">
+		<romfamilies>
+			<romfamily>R02</romfamily>
+			<romfamily>P62</romfamily>
+			<romfamily>P63</romfamily>
+			<romfamily>P64</romfamily>
+			<romfamily>P67</romfamily>
+			<romfamily>P68</romfamily>
+			<romfamily>P69</romfamily>
+			<romfamily>D22</romfamily>
+			<romfamily>I21</romfamily>
+			<romfamily>I22</romfamily>
+			<romfamily>I24</romfamily>
+			<romfamily>I26</romfamily>
+			<romfamily>I27</romfamily>
+			<romfamily>I28</romfamily>
+			<romfamily>I29</romfamily>
+			<romfamily>W07</romfamily>
+		</romfamilies>
+		<romdates>
+			<greaterthan>08/03/10</greaterthan>
+		</romdates>
+		<nvram>0x58</nvram>
+		<value id="0x00">Balanced</value>
+		<value id="0x02">Optimized_for_Memory</value>
+		<value id="0x04">Optimized_for_IO</value>
+		<mask>0x0E</mask>
+	</Section>
+	<Section name="QPI_Bandwidth_Optimization_Gen8">
+		<helptext><![CDATA[Supported in Gen8 servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+				<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x58</nvram>
+		<value id="0x00">Balanced</value>
+		<value id="0x04">Optimized_for_IO</value>
+		<mask>0x0C</mask>
+	</Section>
+	<Section name="Intel_Turbo_Boost_Optimization">
+		<helptext><![CDATA[Optimize Turbo Boost heuristics for different situations.]]></helptext>
+		<proc_mans>
+				<proc_man>Intel</proc_man>
+		</proc_mans>
+		<ev>CQHPER</ev>
+		<length>3</length>
+		<value id="0x00">Optimized_for_Performance</value>
+		<value id="0x10">Optimized_for_Power</value>
+		<mask>0x10</mask>
+		<byte>00</byte>
+	</Section>
+	<Section name="HP_ProLiant_Voodoo_Technology_Processor_Core_Disable">
+		<helptext><![CDATA[Allows disabling of processor cores using Intel's Core Multi-Processing(CMP) technology.]]></helptext>					
+		<romfamilies>
+			<romfamily>V67</romfamily>
+		</romfamilies>
+		<nvram>0x5c</nvram>
+		<value id="0x00">All_Cores_Enabled</value>
+		<value id="0x01">One_Core_Enabled</value>
+		<value id="0x02">Two_Cores_Enabled</value>
+		<value id="0x04">Four_Cores_Enabled</value>
+		<mask>0x07</mask>
+	</Section>
+	<Section name="HP_ProLiant_Voodoo_Technology">
+		<helptext><![CDATA[ProLiant Voodooo Technology.]]></helptext>
+		<romfamilies>
+			<romfamily>V67</romfamily>
+		</romfamilies>
+		<ev>CQSBKT</ev>
+		<length>15</length>
+		<value id="0x00">Disabled</value>
+		<value id="0x04">Enabled</value>
+		<mask>0x06</mask>
+		<byte>14</byte>
+	</Section>
+	<Section name="HP_ProLiant_Voodoo_Technology_Processor_Speed">
+		<helptext><![CDATA[Maximum Enabled Processor Frequency.]]></helptext>
+		<romfamilies>
+			<romfamily>V67</romfamily>
+		</romfamilies>
+		<ev>CQPVTS</ev>
+		<length>2</length>
+		<record_size>2</record_size>
+		<Fields>
+			<Field>
+				<Field_name>Speed</Field_name>
+				<Field_size>2</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="HP_ProLiant_Voodoo_Technology_Voltage">
+		<helptext><![CDATA[Operational Processor Voltage.]]></helptext>
+		<romfamilies>
+			<romfamily>V67</romfamily>
+		</romfamilies>		
+		<ev>CQPVTV</ev>
+		<length>2</length>
+		<record_size>2</record_size>
+		<Fields>
+			<Field>
+				<Field_name>Voltage</Field_name>
+				<Field_size>2</Field_size>
+				<Field_start>0</Field_start>
+			</Field>
+		</Fields>
+	</Section>
+	<Section name="Embedded_Serial_Port_Connector">
+		<helptext><![CDATA[Determines how the embedded serial port connector switches to different connectors.]]></helptext>
+		<romfamilies>
+			<romfamily>P74</romfamily>
+			<romfamily>P75</romfamily>
+		</romfamilies>
+		<ev>CQHDVX</ev>
+		<length>2</length>
+		<value id="0x80">Automatically_Switch_to_SUV</value>
+		<value id="0x00">Front_Serial_Port</value>
+		<mask>0x80</mask>
+		<byte>00</byte>
+	</Section>
+	<Section name="PCI-E_De-emphasis_on_Mezz">
+		<romfamilies>
+			<romfamily>I24</romfamily>
+			<romfamily>I27</romfamily>
+			<romfamily>I28</romfamily>
+		</romfamilies>
+		<nvram>0x74</nvram>
+		<value id="0x00">-6db</value>
+		<value id="0x01">-3.5db</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Intel_Turbo_Boost_Optimization_Gen8">
+		<helptext><![CDATA[Optimize Turbo Boost heuristics for different situations. For Gen8 servers only.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+				<proc_man>Intel</proc_man>
+		</proc_mans>
+		<ev>CQHTRB</ev>
+		<length>1</length>
+		<value id="0x04">Optimized_for_Low_Power</value>
+		<value id="0x02">Optimized_for_Power_Efficiency</value>
+		<value id="0x01">Optimized_for_Performance</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x07</mask>
+		<byte>00</byte>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Embedded_Storage_Device_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 embedded storage controller (PMC control) on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x231</nvram>
+		<value id="0x01">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Embedded_NIC_1_Device_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 embedded NIC 1 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x231</nvram>
+		<value id="0x02">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Embedded_NIC_2_Device_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 embedded NIC 2 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x231</nvram>
+		<value id="0x04">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_System_Specific_Device_1_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 System-Specific Device 1 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x232</nvram>
+		<value id="0x01">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_System_Specific_Device_2_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 System-Specific Device 2 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x232</nvram>
+		<value id="0x02">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_System_Specific_Device_3_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 System-Specific Device 3 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x232</nvram>
+		<value id="0x04">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_System_Specific_Device_4_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 System-Specific Device 4 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x232</nvram>
+		<value id="0x08">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x08</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_System_Specific_Device_5_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 System-Specific Device 5 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x232</nvram>
+		<value id="0x10">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x10</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_System_Specific_Device_6_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 System-Specific Device 6 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x232</nvram>
+		<value id="0x20">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x20</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_System_Specific_Device_7_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 System-Specific Device 7 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x232</nvram>
+		<value id="0x40">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x40</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_System_Specific_Device_8_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 System-Specific Device 8 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x232</nvram>
+		<value id="0x80">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x80</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_1_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 1 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x233</nvram>
+		<value id="0x01">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_2_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 2 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x233</nvram>
+		<value id="0x02">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_3_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 3 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x233</nvram>
+		<value id="0x04">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_4_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 4 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x233</nvram>
+		<value id="0x08">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x08</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_5_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 5 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x233</nvram>
+		<value id="0x10">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x10</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_6_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 6 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x233</nvram>
+		<value id="0x20">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x20</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_7_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 7 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x233</nvram>
+		<value id="0x40">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x40</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_8_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 8 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x233</nvram>
+		<value id="0x80">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x80</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_9_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 9 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x234</nvram>
+		<value id="0x01">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_10_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 10 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x234</nvram>
+		<value id="0x02">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x02</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_11_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 11 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x234</nvram>
+		<value id="0x04">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_12_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 12 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x234</nvram>
+		<value id="0x08">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x08</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_13_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 13 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x234</nvram>
+		<value id="0x10">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x10</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_14_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 14 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x234</nvram>
+		<value id="0x20">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x20</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_15_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 15 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x234</nvram>
+		<value id="0x40">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x40</mask>
+	</Section>
+	<Section name="Intel_PCI_Express_Gen3_Slot_16_Control">
+		<helptext><![CDATA[Allows enabling/disabling PCI-E Gen 3.0 Slot 16 on Intel based Gen8 or later servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x234</nvram>
+		<value id="0x80">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x80</mask>
+	</Section>
+	<Section name="x2APIC_Options">
+		<helptext><![CDATA[This option allows x2APIC mode to be disabled, or allows x2APIC mode to be automatically enabled if the OS supports it ]]></helptext>					
+		<romfamilies>
+			<romfamily>P66</romfamily>
+		</romfamilies>
+		<nvram>0x58</nvram>
+		<value id="0x01">Auto</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="Intel_F11_Boot_Menu_Prompt">
+		<helptext><![CDATA[This option allows the disabling of the POST One Time Boot F11 Prompt on Gen8 Servers. ]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x1E</nvram>
+		<value id="0x00">Enabled</value>
+		<value id="0x04">Disabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="AMD_F11_Boot_Menu_Prompt">
+		<helptext><![CDATA[This option allows the disabling of the POST One Time Boot F11 Prompt on Gen8 Servers. ]]></helptext>					
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<nvram>0x0D</nvram>
+		<value id="0x00">Enabled</value>
+		<value id="0x04">Disabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="Intelligent_Provisioning_F10_Prompt">
+		<helptext><![CDATA[This option allows disabling the Intelligent Provisioning functionality(F10 Prompt).]]></helptext>					
+		<ev>CQSFDIS</ev>
+		<length>1</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+		<byte>0</byte>
+	</Section>
+	<Section name="Energy_Performance_Bias">
+		<helptext><![CDATA[Sets the mode for the Energy/Performance Bias. ]]></helptext>					
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x247</nvram>
+		<value id="0x00">Balanced_Performance</value>
+		<value id="0x01">Maximum_Performance</value>
+		<value id="0x02">Balanced_Power</value>
+		<value id="0x03">Power_Savings_Mode</value>
+		<mask>0x03</mask>
+	</Section>
+	<Section name="1333_MHz_support_for_3DPC_PC3-10600H_HP_SmartMemory">
+		<helptext><![CDATA[For Gen8 servers. Allows the enabling/disabling of 1333 MHz support for 3 DIMMs per channel for HP SmartMemory.]]></helptext>
+		<romfamilies>
+			<romfamily>P70</romfamily>
+			<romfamily>P71</romfamily>
+		</romfamilies>
+		<nvram>0x0237</nvram>
+		<value id="0x01">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>
+	<Section name="System_Locality_Information_Table_G7">
+		<helptext><![CDATA[This ACPI SLIT (System Locality Information Table) describes the relative access times between processors, memory subsystems, and I/O subsystems.]]></helptext>
+		<nvram>0x6F</nvram>
+		<value id="0x00">Disabled</value>
+		<value id="0x80">Enabled</value>
+		<mask>0x80</mask>
+	</Section>
+	<Section name="System_Locality_Information_Table_Gen8">
+		<helptext><![CDATA[This ACPI SLIT (System Locality Information Table) describes the relative access times between processors, memory subsystems, and I/O subsystems.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<ev>CQHSLT</ev>
+		<length>1</length>
+		<value id="0x00">Disabled</value>
+		<value id="0x01">Enabled</value>
+		<mask>0x01</mask>
+		<byte>0</byte>
+	</Section>
+	<Section name="Intel_DIMM_Voltage_Preference">
+		<helptext><![CDATA[.]]></helptext>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x5F</nvram>
+		<value id="0x40">Optimized_for_Power</value>
+		<value id="0x00">Optimized_for_Performance</value>
+		<mask>0x40</mask>
+	</Section>
+	<Section name="AMD_DIMM_Voltage_Preference">
+		<helptext><![CDATA[.]]></helptext>
+		<proc_mans>
+			<proc_man>AMD</proc_man>
+		</proc_mans>
+		<nvram>0x63</nvram>
+		<value id="0x40">Optimized_for_Power</value>
+		<value id="0x00">Optimized_for_Performance</value>
+		<mask>0x40</mask>
+	</Section>
+	<Section name="User_Defined_Defaults">
+		<helptext><![CDATA[For Gen8 only. This option allows saving or erasing the user defined defaults on the server.]]></helptext>					
+		<ev>CQTUDF</ev>
+		<length>1</length>
+		<value id="0x01">Save</value>
+		<value id="0x02">Erase</value>
+		<mask>0xFF</mask>
+		<byte>0</byte>
+	</Section>
+	<Section name="Intel_Memory_Channel_Mode_Gen8">
+		<helptext><![CDATA[Setting the Memory Channel Mode for Gen8 servers.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x52</nvram>
+		<value id="0x00">Independent_Channel_Mode</value>
+		<value id="0x08">Combined_Channel_Mode</value>
+		<mask>0x08</mask>
+	</Section>
+	<Section name="Dynamic_Power_Capping_Functionality">
+		<helptext><![CDATA[.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<ev>CQHPER</ev>
+		<length>3</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x04">Disabled</value>
+		<mask>0x04</mask>
+		<byte>1</byte>
+	</Section>
+	<Section name="SR-IOV">
+		<helptext><![CDATA[This option provides the capability to enable or disable SR-IOV(Single Root I/O Virtualization). ]]></helptext>
+		<nvram>0x45</nvram>
+		<value id="0x00">Disabled</value>
+		<value id="0x04">Enabled</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="Memory_Power_Savings_Mode">
+		<helptext><![CDATA[.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<nvram>0x237</nvram>
+		<value id="0x00">Balanced</value>
+		<value id="0x04">Maximum_Performance</value>
+		<mask>0x04</mask>
+	</Section>
+	<Section name="Network_Boot_Retry_Support">
+		<helptext><![CDATA[.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<nvram>0x66</nvram>
+		<value id="0x00">Enabled</value>
+		<value id="0x80">Disabled</value>
+		<mask>0x80</mask>
+	</Section>
+	<Section name="HP_Option_ROM_Prompting">
+		<helptext><![CDATA[.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<ev>CQHPMT</ev>
+		<length>1</length>
+		<value id="0x00">Enabled</value>
+		<value id="0x01">Disabled</value>
+		<mask>0x01</mask>
+		<byte>0</byte>
+	</Section>
+	<Section name="Reset_on_Boot_Device_Not_Found">
+		<helptext><![CDATA[.]]></helptext>
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<nvram>0x66</nvram>
+		<value id="0x40">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x40</mask>
+	</Section>
+	<Section name="Intel_NIC_DMA_Channels">
+		<helptext><![CDATA[This setting allows the user to enable Intel NIC DMA Channels.]]></helptext>	
+		<platforms>
+			<platform>Gen8</platform>
+		</platforms>
+		<proc_mans>
+			<proc_man>Intel</proc_man>
+		</proc_mans>
+		<nvram>0x45</nvram>
+		<value id="0x01">Enabled</value>
+		<value id="0x00">Disabled</value>
+		<mask>0x01</mask>
+	</Section>	
+	<Section name="SMI_Link_Power_Management">
+		<helptext><![CDATA[.]]></helptext>	
+		<romfamilies>
+			<romfamily>P65</romfamily>
+			<romfamily>I25</romfamily>
+		</romfamilies>
+		<nvram>0x6F</nvram>
+		<value id="0x00">Enabled</value>
+		<value id="0x08">Disabled</value>
+		<mask>0x08</mask>
+	</Section>
+</Conrep>
