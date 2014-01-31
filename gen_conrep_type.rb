@@ -46,7 +46,7 @@ Usage:
 
   puppet resource conrep
 
-  puppet apply -e 'conrep{"default": hyperthreading => "Disabled"}'
+  puppet apply -e 'conrep{\\"default\\": hyperthreading => \\"Disabled\\"}'
 
 Note: the name of the resource is hardcoded to 'default'. This is because each server has only one set of BIOS settings; when represented as a resource they need a name, and 'default' seems like a sensible choice.
 
@@ -64,27 +64,6 @@ The names of the settings supported by BIOS revisions varies. The gen_conrep_typ
 	ensurable
 
 	newparam(:name, :namevar => true) do
-	end
-
-	newparam(:flagchanges) do
-		newvalues(:true, :false)
-		defaultto(:false)
-	end
-
-	newparam(:appendchanges) do
-		newvalues(:true, :false)
-		defaultto(:false)
-	end
-
-	newparam(:flagfile) do
-		defaultto('/tmp/conrep_changes')
-		validate do |path|
-			if path.include?('..')
-				fail("Path to flagfile must not contains '..'")
-			elsif ! ( path.start_with?('/tmp') or path.start_with?('/var/tmp') )
-				fail("Path to flagfile must start with '/tmp' or '/var/tmp'")
-			end
-		end
 	end
 
 EOT
@@ -117,21 +96,58 @@ conrepFile = File.open('conrep.xml')
 conrepXml = REXML::Document.new conrepFile
 #conrepXml = REXML::Document.new $stdin
 
-conrepXml.root.elements.each('/Conrep/Section') { |section| 
+propertyNameSeen = {}
+
+conrepXml.root.elements.each('/Conrep/Section') do |section| 
 #  require 'ruby-debug';debugger
 
-	propertyName = ':' + makeValid(section.attributes['name'])
-	validValues = []
+  unless propertyNameSeen[section.attributes['name']]
+    propertyNameSeen[section.attributes['name']] = true
+  
+  	propertyName = ':' + makeValid(section.attributes['name'])
+  	validValues = []
+  
+  	section.elements.each('value') do |value| 
+#      puts "\t" + value.attributes['id']
+#      puts "\t" + value.text
+  		#validValues << ':' + makeValid(value.text)
+  
+      # Need to figure out how to cope with Section elements that appear more than once, for example:
+      #  <Section name="Intel_NIC_DMA_Channels">
+      #    <helptext><![CDATA[This setting allows the user to enable Intel NIC DMA Channels.]]></helptext>
+      #    <platforms>
+      #      <platform>Gen8</platform>
+      #    </platforms>
+      #    <proc_mans>
+      #      <proc_man>Intel</proc_man>
+      #    </proc_mans>
+      #    <nvram>0x45</nvram>
+      #    <value id="0x01">Enabled</value>
+      #    <value id="0x00">Disabled</value>
+      #    <mask>0x01</mask>
+      #  </Section>
+      #                                                                                                          
+      # And:
+      #  <Section name="Intel_NIC_DMA_Channels">
+      #    <helptext><![CDATA[]]></helptext>
+      #    <romfamilies>
+      #      <romfamily>R02</romfamily>
+      #    </romfamilies>
+      #    <nvram>0x6D</nvram>
+      #    <value id="0x01">Enabled</value>
+      #    <value id="0x00">Disabled</value>
+      #    <mask>0x01</mask>
+      #  </Section>
+      #  In the case of this BIOS parameter the valid values are the same (i.e. 'Enabled' and 'Disabled'). So in this particular case
+      #  all we need to do is confirm whether the Section has been seen previously, and if it has then skip it. 
+      #
+      #  There may be other parameters  potentially introduced in future this may not be the case. There appear to be discriminators for the parameters, i.e. <platforms> and <romfamilies> and presumably these (or something similar) can be used if this arises in future.
+  		validValues << value.text
+  	end
 
-	section.elements.each('value') { |value| 
-#    puts "\t" + value.attributes['id']
-#    puts "\t" + value.text
-		#validValues << ':' + makeValid(value.text)
-		validValues << value.text
-	}
-
-	puts ERB.new($newpropertyTemplate).result(binding)
-}
+	  puts ERB.new($newpropertyTemplate).result(binding)
+  end
+end
 
 puts <<EOT
 end

@@ -15,9 +15,9 @@
 
 require 'puppet'
 require 'rexml/document'
-require 'open3'
-require 'xml/xslt'
-require 'erb'
+#require 'open3'
+#require 'xml/xslt'
+#require 'erb'
 require 'tempfile'
 
 # Next: read conrep documentation to determine what form the input XML must take when making changes
@@ -45,15 +45,25 @@ Puppet::Type.type(:conrep).provide(:conrep) do
   foundConrep = false
   ['/usr/bin/conrep', '/sbin/hp-conrep', '/home/toby/Dev/Puppet/puppet-conrep/fakeconrep'].each do |candidate|
     if File.exists?(candidate)
-      commands :hprcu => candidate
+      commands :conrep => candidate
       foundConrep = true
       break
     end
   end
 
-  if ! foundConrep
-    fail "conrep binary not found"
-  end 
+#  # Look for conrep config. file (conrep.xml)
+#  foundConrepConfigXml = false
+#  ['/opt/hp/hp-scripting/etc/conrep.xml'].each do |candidate|
+#    if File.exists?(candidate)
+#      $conrepConfigXml = candidate
+#      foundConrepConfigXml = true
+#      break
+#    end
+#  end
+#
+#  if ! foundConrepConfigXml
+#    fail "conrep XML config. file (conrep.xml) not found"
+#  end 
 
   # No XML until fetched
   $conrepXml = nil
@@ -61,25 +71,7 @@ Puppet::Type.type(:conrep).provide(:conrep) do
   # Record of changes made
   $changes = []
 
-  $xsltTemplate = <<EOT
-<?xml version="1.0"?>
-<xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-    <!-- IdentityTransform -->
-    <xsl:template match="/|@*|node()">
-        <xsl:copy>
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:copy>
-    </xsl:template>
-
-    <xsl:template match="/hprcu/feature[@feature_id='<%= featureId %>']">
-        <feature feature_id='<%= featureId %>' selected_option_id='<%= selectedOptionId %>'  sys_default_option_id='<%= sysDefaultOptionId %>' feature_type='option'>
-      <xsl:copy-of select="node()"/>
-    </feature>
-    </xsl:template>
-</xsl:stylesheet>
-EOT
+  $validSectionName2RealSectionName = {}
 
   # This is a modified version of mk_resource_methods from provider.rb
   def self.my_mk_resource_methods
@@ -127,7 +119,7 @@ EOT
 
   def self.instances
     # This method does several things:
-    # * reads the XML that is output by conrep
+    # * reads the XML that is output by conrep (conrep.dat)
     # * gathers a list of the names of the features (i.e. BIOS settings)
     # * for each feature it gathers the possible options, the current and default options
 
@@ -135,9 +127,6 @@ EOT
       self.fetchXml
     end
 
-    $property2FeatureIdMap = {}
-    $value2SelectionOptionIdMap = {}
-    $propertyName2SysDefaultOptionIdMap = {}
     propertyLookup = {}
 
     # Set some other properties that don't come from the XML
@@ -148,22 +137,36 @@ EOT
     #   is absent, Puppet ignores any specified resource property."
     propertyLookup[:ensure] = :present
 
-    # Iterate over features and populate propertyLookup in preparation for creating 
-    # a new object with the properties and their values defined
+    # Iterate over sections and populate propertyLookup in preparation for creating 
+    # a new object with section names and values defined
     $conrepXml.elements.each('/Conrep/Section') do |section|
-      sectionName = makeValid(section.attributes['name'].text.downcase).to_sym
-      $sectionValue[sectionName] = section.text;
+      # How do we cope with XML elements which don't represent tunables, for example:
+      #   <Section name="IMD_ServerName" helptext="Asset tag string as entered in RBSU">
+      #     <Line0>
+      #       </Line0>
+      #   </Section>
+      # Solution: check section.text and if it consists of whitespace then skip it.
+      if section.text =~ /\s+/
+        # Skip this Section
+      else
+        sectionName = makeValid(section.attributes['name'].downcase).to_sym
 
+        # Save the real section name to re-use later when generating the XML
+        $validSectionName2RealSectionName[sectionName] = section.attributes['name']
+
+        propertyLookup[sectionName] = section.text;
+      end
     end
 
     # Return an array containing a single instance of the resource (by definition there 
     # is only only one instance of the BIOS settings per host)
-    [ new($sectionValue) ]
+    [ new(propertyLookup) ]
   end
 
   def self.fetchXml
     tempfile = Tempfile.new('puppetconrep')
     tempfile.close
+#    conrep('-s', '-x', conrepConfigXml, '-f', tempfile.path)
     conrep('-s', '-f', tempfile.path)
 
     conrepFileHandle = File.open(tempfile.path, 'r');
@@ -180,48 +183,20 @@ EOT
     end
   end
 
-  # TODO: Consider renaming to 'generateXml' because I can generate a new XML file rather than munging the conrep.dat file that I got from conrep?
-  def modifyXml(property)
-    # Referring to the data gathered earlier by self.instances, this function
-    # looks up the option_id of the new option value and modifies the XML in
-    # conrepXml to reflect the new selection
-    newValue = @property_flush[property]
-
-    featureId = $property2FeatureIdMap[property]
-    selectedOptionId = $value2SelectionOptionIdMap[property][newValue]
-    sysDefaultOptionId = $propertyName2SysDefaultOptionIdMap[property]
-
-    xslt = XML::XSLT.new()
-    xslt.xml = $conrepXml
-    xslt.xsl = ERB.new($xsltTemplate).result(binding)
-    $conrepXml = REXML::Document.new xslt.serve()
-  end
-
   def flush
-    # Modify XML setting each of the required settings
-    @property_flush.keys.each do |property|
-      $conrepXml = modifyXml(property) # See above (call 'generateXml(@property_flush)')?
+    # Generate XML
+    xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Conrep>\n"
+    property_flush.each do |property, value|
+      xml += "<Section name=\"#{$validSectionName2RealSectionName[property]}\">#{value}</Section>\n"
     end
+    xml += "</Conrep>"
 
     # Write modified XML to temp. file and load into BIOS using conrep
     tempfile = Tempfile.new('puppetconrep')
-    tempfile.write($conrepXml)
+    tempfile.write(xml)
     tempfile.close
+#    conrep('-l', '-x', conrepConfigXml , '-f', tempfile.path)
     conrep('-l', '-f', tempfile.path)
-
-    # Write to flag file if required
-    if @resource[:flagchanges] == :true
-      flagfilePath = @resource[:flagfile]
-      if @resource[:appendchanges] == :true
-        flagfile = File.open(flagfilePath, 'a') # TODO: error-checking
-      else 
-        flagfile = File.open(flagfilePath, 'w') # TODO: error-checking
-      end
-      @property_flush.keys.each do |property|
-        flagfile.write( sprintf("%s: Changed '%s' to '%s'\n", Time.now, property, @property_flush[property] ))
-      end
-      flagfile.close
-    end
 
     @property_hash = resource.to_hash
   end
