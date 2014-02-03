@@ -101,6 +101,38 @@ propertyNameSeen = {}
 conrepXml.root.elements.each('/Conrep/Section') do |section| 
 #  require 'ruby-debug';debugger
 
+  # Section elements may appear twice, for example:
+  #  <Section name="Intel_NIC_DMA_Channels">
+  #    <helptext><![CDATA[This setting allows the user to enable Intel NIC DMA Channels.]]></helptext>
+  #    <platforms>
+  #      <platform>Gen8</platform>
+  #    </platforms>
+  #    <proc_mans>
+  #      <proc_man>Intel</proc_man>
+  #    </proc_mans>
+  #    <nvram>0x45</nvram>
+  #    <value id="0x01">Enabled</value>
+  #    <value id="0x00">Disabled</value>
+  #    <mask>0x01</mask>
+  #  </Section>
+  #                                                                                                          
+  # And:
+  #  <Section name="Intel_NIC_DMA_Channels">
+  #    <helptext><![CDATA[]]></helptext>
+  #    <romfamilies>
+  #      <romfamily>R02</romfamily>
+  #    </romfamilies>
+  #    <nvram>0x6D</nvram>
+  #    <value id="0x01">Enabled</value>
+  #    <value id="0x00">Disabled</value>
+  #    <mask>0x01</mask>
+  #  </Section>
+  #
+  #  In the case above the valid values are the same (i.e. 'Enabled' and 'Disabled') so all we need to do is confirm whether 
+  #  the Section has been seen previously, and if it has then skip it. 
+  #
+  #  There may be other parameters introduced in future for which this is not be the case. There appear to be discriminators for 
+  #  the parameters, i.e. <platforms> and <romfamilies> and presumably these (or something similar) can be used if this arises in future.
   unless propertyNameSeen[section.attributes['name']]
     propertyNameSeen[section.attributes['name']] = true
   
@@ -108,40 +140,6 @@ conrepXml.root.elements.each('/Conrep/Section') do |section|
   	validValues = []
   
   	section.elements.each('value') do |value| 
-#      puts "\t" + value.attributes['id']
-#      puts "\t" + value.text
-  		#validValues << ':' + makeValid(value.text)
-  
-      # Need to figure out how to cope with Section elements that appear more than once, for example:
-      #  <Section name="Intel_NIC_DMA_Channels">
-      #    <helptext><![CDATA[This setting allows the user to enable Intel NIC DMA Channels.]]></helptext>
-      #    <platforms>
-      #      <platform>Gen8</platform>
-      #    </platforms>
-      #    <proc_mans>
-      #      <proc_man>Intel</proc_man>
-      #    </proc_mans>
-      #    <nvram>0x45</nvram>
-      #    <value id="0x01">Enabled</value>
-      #    <value id="0x00">Disabled</value>
-      #    <mask>0x01</mask>
-      #  </Section>
-      #                                                                                                          
-      # And:
-      #  <Section name="Intel_NIC_DMA_Channels">
-      #    <helptext><![CDATA[]]></helptext>
-      #    <romfamilies>
-      #      <romfamily>R02</romfamily>
-      #    </romfamilies>
-      #    <nvram>0x6D</nvram>
-      #    <value id="0x01">Enabled</value>
-      #    <value id="0x00">Disabled</value>
-      #    <mask>0x01</mask>
-      #  </Section>
-      #  In the case of this BIOS parameter the valid values are the same (i.e. 'Enabled' and 'Disabled'). So in this particular case
-      #  all we need to do is confirm whether the Section has been seen previously, and if it has then skip it. 
-      #
-      #  There may be other parameters  potentially introduced in future this may not be the case. There appear to be discriminators for the parameters, i.e. <platforms> and <romfamilies> and presumably these (or something similar) can be used if this arises in future.
   		validValues << value.text
   	end
 
