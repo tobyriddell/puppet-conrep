@@ -186,7 +186,7 @@ Puppet::Type.type(:conrep).provide(:conrep) do
   def flush
     # Generate XML
     xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Conrep>\n"
-    property_flush.each do |property, value|
+    @property_flush.each do |property, value|
       xml += "<Section name=\"#{$validSectionName2RealSectionName[property]}\">#{value}</Section>\n"
     end
     xml += "</Conrep>"
