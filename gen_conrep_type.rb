@@ -92,9 +92,9 @@ $newpropertyTemplate = <<EOT
 
 EOT
 
-conrepFile = File.open('conrep.xml')
-conrepXml = REXML::Document.new conrepFile
-#conrepXml = REXML::Document.new $stdin
+#conrepFile = File.open('conrep.xml')
+#conrepXml = REXML::Document.new conrepFile
+conrepXml = REXML::Document.new $stdin
 
 propertyNameSeen = {}
 
